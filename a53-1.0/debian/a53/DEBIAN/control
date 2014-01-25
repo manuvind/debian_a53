@@ -1,0 +1,9 @@
+Package: a53
+Version: 1.0-1
+Architecture: amd64
+Maintainer: Kurtis Heimerl <kheimerl@cs.berkeley.edu>
+Installed-Size: 55
+Depends: libc6 (>= 2.4)
+Section: misc
+Priority: optional
+Description: Necessary library for openbts.

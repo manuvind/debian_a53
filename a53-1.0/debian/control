@@ -1,0 +1,11 @@
+Source: a53
+Maintainer: Kurtis Heimerl <kheimerl@cs.berkeley.edu>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.3
+Build-Depends: debhelper (>=9)
+
+Package: a53
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Necessary library for openbts.

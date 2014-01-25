@@ -1,0 +1,31 @@
+Format: 1.8
+Date: Mon, 18 Nov 2013 14:47:02 -0800
+Source: a53
+Binary: a53
+Architecture: source amd64
+Version: 1.0-1
+Distribution: precise
+Urgency: low
+Maintainer: Kurtis Heimerl <kheimerl@cs.berkeley.edu>
+Changed-By: Anuvind Menon <xray@xrayBase>
+Description: 
+ a53        - Necessary library for openbts.
+Changes: 
+ a53 (1.0-1) precise; urgency=low
+ .
+   * Initial release. (Closes: #XXXXXX)
+Checksums-Sha1: 
+ 0f7a23740f356cea72a7f153d6928e5564702ff1 719 a53_1.0-1.dsc
+ 35dfca829ea376439aa2aead4a80d2ba0c67cfaa 59191 a53_1.0.orig.tar.gz
+ 2588a633901424d93eed4d48428116f6a9957bab 1814 a53_1.0-1.debian.tar.gz
+ 5db7bc01944032f9760b5170498b0d15e66c5a66 12060 a53_1.0-1_amd64.deb
+Checksums-Sha256: 
+ 3c24c13e37a3830cadae5af2fe961228e25e2ca63ea15cebc02139fd71dd4883 719 a53_1.0-1.dsc
+ ace6923f3f21d482260a41e80d679c42d3064569143fe0699470af911e0365ce 59191 a53_1.0.orig.tar.gz
+ c094cc9a9bbf6dee2ee39d7a8f260ada516a4af544caacf8fbe2f604f42e55d4 1814 a53_1.0-1.debian.tar.gz
+ 81b69c2417a21ff021337e2bccd97f7b5a3c2df3d3757b24e596b74b3b076990 12060 a53_1.0-1_amd64.deb
+Files: 
+ b3a79e978df5e5a3a5afc0942405b8b8 719 misc optional a53_1.0-1.dsc
+ d5086ccc72e24e20c0802c3b0a15e0a3 59191 misc optional a53_1.0.orig.tar.gz
+ fd2f45f4b0ab5bdb7340fe4da5705d39 1814 misc optional a53_1.0-1.debian.tar.gz
+ 4d75b0ced9a44dc60a21dcf48b10f32f 12060 misc optional a53_1.0-1_amd64.deb

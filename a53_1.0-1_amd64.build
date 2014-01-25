@@ -1,0 +1,100 @@
+ dpkg-buildpackage -rfakeroot -D -us -uc
+dpkg-buildpackage: source package a53
+dpkg-buildpackage: source version 1.0-1
+dpkg-buildpackage: source changed by Anuvind Menon <xray@xrayBase>
+ dpkg-source --before-build a53-1.0
+dpkg-buildpackage: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   dh_testdir
+   dh_auto_clean
+make[1]: Entering directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+rm -f a5.o bits.o gea.o kasumi.o utils.o ifc.o liba53.so* a53test
+make[1]: Leaving directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+   dh_clean
+ dpkg-source -b a53-1.0
+dpkg-source: info: using source format `3.0 (quilt)'
+dpkg-source: info: building a53 using existing ./a53_1.0.orig.tar.gz
+dpkg-source: info: building a53 in a53_1.0-1.debian.tar.gz
+dpkg-source: info: building a53 in a53_1.0-1.dsc
+ debian/rules build
+dh build
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+make[1]: Entering directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+g++ -O3 -Wall -fPIC -c a5.c bits.c gea.c kasumi.c utils.c ifc.cpp
+g++ -shared -Wl,-soname,liba53.so.1 -o liba53.so.1.0 a5.o bits.o gea.o kasumi.o utils.o ifc.o
+ln -sf liba53.so.1.0 liba53.so.1
+ln -sf liba53.so.1.0 liba53.so
+make[1]: Leaving directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary
+   dh_testroot
+   dh_prep
+   dh_installdirs
+   debian/rules override_dh_auto_install
+make[1]: Entering directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+/usr/bin/make DESTDIR=$(pwd)/debian/a53 install
+make[2]: Entering directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+cp liba53.so.1.0 /home/xray/openbts_a53/public/a53/a53-1.0/debian/a53/usr/lib
+cp a53.h /home/xray/openbts_a53/public/a53/a53-1.0/debian/a53/usr/include
+make[2]: Leaving directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+make[1]: Leaving directory `/home/xray/openbts_a53/public/a53/a53-1.0'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_installexamples
+   dh_installman
+   dh_installcatalogs
+   dh_installcron
+   dh_installdebconf
+   dh_installemacsen
+   dh_installifupdown
+   dh_installinfo
+   dh_installinit
+   dh_installmenu
+   dh_installmime
+   dh_installmodules
+   dh_installlogcheck
+   dh_installlogrotate
+   dh_installpam
+   dh_installppp
+   dh_installudev
+   dh_installwm
+   dh_installxfonts
+   dh_installgsettings
+   dh_bugfiles
+   dh_ucf
+   dh_lintian
+   dh_gconf
+   dh_icons
+   dh_perl
+   dh_usrlocal
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package `a53' in `../a53_1.0-1_amd64.deb'.
+ dpkg-genchanges  >../a53_1.0-1_amd64.changes
+dpkg-genchanges: including full source code in upload
+ dpkg-source --after-build a53-1.0
+dpkg-buildpackage: full upload (original source is included)
+Now running lintian...
+E: a53 changes: changed-by-address-malformed Anuvind Menon <xray@xrayBase>
+W: a53: package-name-doesnt-match-sonames liba53-1
+E: a53: debian-changelog-file-contains-invalid-email-address xray@xrayBase
+W: a53: new-package-should-close-itp-bug
+W: a53: wrong-bug-number-in-closes l3:#XXXXXX
+W: a53: copyright-without-copyright-notice
+E: a53: extended-description-is-empty
+W: a53: zero-byte-file-in-doc-directory usr/share/doc/a53/copyright
+W: a53: non-dev-pkg-with-shlib-symlink usr/lib/liba53.so.1.0 usr/lib/liba53.so
+Finished running lintian.

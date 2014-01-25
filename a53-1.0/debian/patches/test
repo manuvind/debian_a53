@@ -1,0 +1,43 @@
+Description: Makefile works with DESTDIR
+ TODO: Make file works with new environment variables.
+ .
+ a53 (1.0-1) precise; urgency=low
+ .
+   * Initial release. (Closes: #XXXXXX)
+Author: Anuvind Menon <xray@xrayBase>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- a53-1.0.orig/Makefile
++++ a53-1.0/Makefile
+@@ -11,14 +11,14 @@ liba53.so.1.0: ${SOURCE_FILES} ${INCLUDE
+ 
+ # install A5/3 library
+ install: liba53.so.1.0
+-	cp liba53.so.1.0 /usr/lib
+-	ln -sf /usr/lib/liba53.so.1.0 /usr/lib/liba53.so.1
+-	ln -sf /usr/lib/liba53.so.1.0 /usr/lib/liba53.so
+-	cp a53.h /usr/include
++	cp liba53.so.1.0 $(DESTDIR)/usr/lib
++	ln -sf $(DESTDIR)/usr/lib/liba53.so.1.0 $(DESTDIR)/usr/lib/liba53.so.1
++	ln -sf $(DESTDIR)/usr/lib/liba53.so.1.0 $(DESTDIR)/usr/lib/liba53.so
++	cp a53.h $(DESTDIR)/usr/include
+ 
+ # test installed A5/3 library
+ installtest: install
+-	g++ -o a53test a53test.cpp -I/usr/include -L/usr/lib -la53
++	g++ -o a53test a53test.cpp -I$(DESTDIR)/usr/include -L$(DESTDIR)/usr/lib -la53
+ 	./a53test
+ 
+ clean:
